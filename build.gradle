@@ -33,10 +33,14 @@ subprojects {
     }
 
     def determinePatchVersion = {
-        def tagInfo = providers.exec {
+        def result = providers.exec {
             commandLine 'git', 'describe', '--tags'
-        }.standardOutput.asText.get().trim()
-
+            ignoreExitValue = true
+        }
+        if (result.result.get().exitValue != 0) {
+            return 0
+        }
+        def tagInfo = result.standardOutput.asText.get().trim()
         return tagInfo.contains('-') ? tagInfo.split('-')[1] : 0
     }
 
