@@ -79,7 +79,8 @@ public interface Platform {
         NEOFORGE("NeoForge"),
         FORGE("Forge"),
         STANDALONE("Standalone"),
-        HYTALE("Hytale");
+        HYTALE("Hytale"),
+        MCPROXY("MCProxy");
 
         private final String friendlyName;
 
