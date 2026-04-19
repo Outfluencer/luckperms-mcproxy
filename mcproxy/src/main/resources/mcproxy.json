@@ -1,0 +1,6 @@
+{
+  "name": "LuckPerms",
+  "version": "${version}",
+  "mainClass": "me.lucko.luckperms.mcproxy.LPMCProxyBootstrap",
+  "authors": ["Luck"]
+}
